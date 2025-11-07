@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowstix | Mini Lacrosse & Knee Hockey Gear</title>
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #111;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #e60000;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Home Section */
+    #home {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1603732209232-8c0a9b472151?auto=format&fit=crop&w=1600&q=80') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    #home h2 {
+      font-size: 3rem;
+      color: #e60000;
+      margin-bottom: 0.5rem;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+      color: #ddd;
+      max-width: 600px;
+    }
+
+    #shop h2, #about h2 {
+      color: #e60000;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #fafafa;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      margin: 0.5rem;
+      color: #000;
+    }
+
+    .product p {
+      margin: 0 0.5rem 1rem;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      #home h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Flowstix</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About Us</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Flowstix</h2>
+    <p>Premium knee hockey sticks and mini traditional lacrosse sticks — built for players who live and breathe the game.</p>
+  </section>
+
+  <section id="shop">
+    <h2>Shop</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1574785820350-4a4e46f0a1fc?auto=format&fit=crop&w=800&q=80" alt="Knee Hockey Stick">
+        <h3>Knee Hockey Stick</h3>
+        <p>Lightweight, durable, and ready for your next mini rink showdown.</p>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1616612525268-6e9c7482e25e?auto=format&fit=crop&w=800&q=80" alt="Mini Lacrosse Stick">
+        <h3>Mini Lacrosse Stick</h3>
+        <p>Traditional stringing and authentic feel — scaled down for your mini matches.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto; font-size:1.1rem; color:#333;">
+      Flowstix was founded by a group of passionate players who wanted to bring the same energy from the rink and the field to the mini game. 
+      We handcraft every stick with quality materials and a focus on performance — because we play the game too.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Flowstix. All Rights Reserved.</
