@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flowstix | Mini Lacrosse & Knee Hockey Gear</title>
   <style>
-    /* General reset */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -14,28 +15,34 @@
     }
 
     body {
-      background-color: #fff;
-      color: #111;
+      background: linear-gradient(135deg, #000 0%, #111 50%, #222 100%);
+      color: #fff;
       scroll-behavior: smooth;
     }
 
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: #000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       z-index: 1000;
+      border-bottom: 2px solid #e60000;
     }
 
     header h1 {
-      font-size: 1.5rem;
-      color: #e60000;
-      letter-spacing: 1px;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #e60000, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      letter-spacing: 2px;
     }
 
     nav a {
@@ -43,85 +50,133 @@
       text-decoration: none;
       margin-left: 1.5rem;
       font-weight: 500;
+      position: relative;
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #007bff;
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #e60000, #007bff);
+      transition: width 0.3s;
     }
 
-    section {
-      padding: 100px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+    nav a:hover::after {
+      width: 100%;
     }
 
-    /* Home Section */
+    /* HOME */
     #home {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                  url('https://images.unsplash.com/photo-1603732209232-8c0a9b472151?auto=format&fit=crop&w=1600&q=80') center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
       text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1603732209232-8c0a9b472151?auto=format&fit=crop&w=1600&q=80') center/cover;
+      background-attachment: fixed;
+      padding: 0 20px;
     }
 
     #home h2 {
       font-size: 3rem;
-      color: #e60000;
-      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #e60000, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
     }
 
     #home p {
       font-size: 1.2rem;
       color: #ddd;
-      max-width: 600px;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
     }
 
-    #shop h2, #about h2 {
-      color: #e60000;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background: linear-gradient(90deg, #e60000, #007bff);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
       text-align: center;
+      margin-bottom: 2rem;
+      background: linear-gradient(90deg, #e60000, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
+    /* SHOP */
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
 
     .product {
-      border: 1px solid #ccc;
-      border-radius: 10px;
+      background: #111;
+      border-radius: 15px;
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
-      background-color: #fafafa;
+      border: 2px solid #222;
     }
 
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+      border-color: #007bff;
     }
 
     .product img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
     }
 
     .product h3 {
-      margin: 0.5rem;
-      color: #000;
+      color: #fff;
+      margin: 0.8rem 1rem 0.3rem;
+      font-size: 1.2rem;
     }
 
     .product p {
-      margin: 0 0.5rem 1rem;
-      color: #333;
+      margin: 0 1rem 1.2rem;
+      color: #ccc;
       font-size: 0.95rem;
+    }
+
+    /* ABOUT */
+    #about p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ddd;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     footer {
@@ -129,11 +184,12 @@
       padding: 2rem;
       background: #000;
       color: white;
+      border-top: 2px solid #e60000;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       #home h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -150,32 +206,41 @@
 
   <section id="home">
     <h2>Welcome to Flowstix</h2>
-    <p>Premium knee hockey sticks and mini traditional lacrosse sticks — built for players who live and breathe the game.</p>
+    <p>Premium knee hockey sticks and mini traditional lacrosse sticks — built for players who live and breathe the game. Play hard, play smooth, play with flow.</p>
+    <a href="#shop" class="btn">Shop Now</a>
   </section>
 
   <section id="shop">
-    <h2>Shop</h2>
+    <h2>Shop Our Gear</h2>
     <div class="products">
       <div class="product">
         <img src="https://images.unsplash.com/photo-1574785820350-4a4e46f0a1fc?auto=format&fit=crop&w=800&q=80" alt="Knee Hockey Stick">
         <h3>Knee Hockey Stick</h3>
-        <p>Lightweight, durable, and ready for your next mini rink showdown.</p>
+        <p>Lightweight, durable, and perfect for indoor battles. Flow-approved for the ultimate mini rink showdown.</p>
       </div>
       <div class="product">
         <img src="https://images.unsplash.com/photo-1616612525268-6e9c7482e25e?auto=format&fit=crop&w=800&q=80" alt="Mini Lacrosse Stick">
         <h3>Mini Lacrosse Stick</h3>
-        <p>Traditional stringing and authentic feel — scaled down for your mini matches.</p>
+        <p>Authentic pocket, handcrafted design, and full-field energy — shrunken down for your mini matchups.</p>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1587080413959-7a4564b5c930?auto=format&fit=crop&w=800&q=80" alt="Custom Flow Pack">
+        <h3>Custom Flow Pack</h3>
+        <p>Get your name, number, and colors custom printed on your sticks. Be unique. Be Flowstix.</p>
       </div>
     </div>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
-    <p style="text-align:center; max-width:700px; margin:0 auto; font-size:1.1rem; color:#333;">
-      Flowstix was founded by a group of passionate players who wanted to bring the same energy from the rink and the field to the mini game. 
-      We handcraft every stick with quality materials and a focus on performance — because we play the game too.
+    <p>
+      Flowstix was started by a group of players who wanted to keep the game alive off the rink and field. We craft every stick with precision, passion, and pride — because we play too. Whether it's a basement brawl or a dorm room challenge, Flowstix gear keeps your game smooth, fast, and full of style.
     </p>
   </section>
 
   <footer>
-    <p>© 2025 Flowstix. All Rights Reserved.</
+    <p>© 2025 Flowstix. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+
